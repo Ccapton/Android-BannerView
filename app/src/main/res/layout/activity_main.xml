@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.capton.bannerviewdemo.MainActivity">
+
+    <com.capton.bannerview.BannerView
+        xmlns:bannerview="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/banner"
+        bannerview:dot_size="@dimen/dot_size_normal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+    </com.capton.bannerview.BannerView>
+
+    <com.capton.bannerview.BannerView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/banner"
+        xmlns:bannerview="http://schemas.android.com/apk/res-auto"
+        bannerview:incator_location="left"
+        bannerview:dot_size="@dimen/dot_size_small"
+        bannerview:dot_color="@color/colorPrimary"
+        android:id="@+id/banner3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+    </com.capton.bannerview.BannerView>
+
+    <com.capton.bannerview.BannerView
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/banner3"
+        xmlns:bannerview="http://schemas.android.com/apk/res-auto"
+        bannerview:dot_size="@dimen/dot_size_large"
+        bannerview:dot_color="@color/colorAccent"
+        android:id="@+id/banner2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+    </com.capton.bannerview.BannerView>
+
+
+
+</RelativeLayout>

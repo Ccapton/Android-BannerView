@@ -1,0 +1,6 @@
+
+<resources>
+    <dimen name="dot_size_small">6dp</dimen>
+    <dimen name="dot_size_normal">8dp</dimen>
+    <dimen name="dot_size_large">12dp</dimen>
+</resources>

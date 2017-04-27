@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerView">
+        <attr name="interval" format="integer"/>
+        <attr name="incator_location" format="string"/>
+        <attr name="dot_size" format="dimension"/>
+        <attr name="dot_color" format="color|reference"/>
+    </declare-styleable>
+</resources>
