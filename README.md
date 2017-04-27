@@ -13,7 +13,7 @@ BannerView从我的初始项目AutoPlayViewpager改进而来
 
 ### 示例:  
 
-![](https://yqall01.baidupcs.com/file/bf7470b101caa64279c75984bd26304a?bkt=p3-1400bf7470b101caa64279c75984bd26304a47ddf71a000000141460&fid=221609635-250528-417068822765698&time=1493284613&sign=FDTAXGERBHS-DCb740ccc5511e5e8fedcff06b081203-%2BV1zQzez1mnRmj7KyX0V4gcMhSI%3D&to=74&size=1315936&sta_dx=1315936&sta_cs=0&sta_ft=gif&sta_ct=0&sta_mt=0&fm2=MH,Yangquan,Netizen-anywhere,,guangdong,ct&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=1400bf7470b101caa64279c75984bd26304a47ddf71a000000141460&expires=8h&rt=pr&r=488640343&mlogid=2707067794334106590&vuk=221609635&vbdid=2668435181&fin=S70427-17105775.gif&fn=S70427-17105775.gif&rtype=1&iv=2&dp-logid=2707067794334106590&dp-callid=0.1.1&hps=1&csl=0&csign=mLq5QedtLBdQLZS6b6U8OkFWBFw%3D&by=themis) 
+![](https://shcm10.baidupcs.com/file/5b75ad2a86ad2057557bc9f412087fca?bkt=p3-14005b75ad2a86ad2057557bc9f412087fca1d2797e000000032a0cf&fid=221609635-250528-836152431575422&time=1493285024&sign=FDTAXGERBHS-DCb740ccc5511e5e8fedcff06b081203-w%2FXVydLihVjJIDBfRIzAxYP%2Fyig%3D&to=72&size=3317967&sta_dx=3317967&sta_cs=0&sta_ft=mp4&sta_ct=0&sta_mt=0&fm2=MH,Guangzhou,Netizen-anywhere,,beijing,cmnet&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=14005b75ad2a86ad2057557bc9f412087fca1d2797e000000032a0cf&expires=8h&rt=pr&r=792899703&mlogid=2707178081932784424&vuk=221609635&vbdid=2668435181&fin=S70427-17105775.mp4&fn=S70427-17105775.mp4&rtype=1&iv=2&dp-logid=2707178081932784424&dp-callid=0.1.1&hps=1&csl=0&csign=mLq5QedtLBdQLZS6b6U8OkFWBFw%3D&by=themis) 
 
 
 
