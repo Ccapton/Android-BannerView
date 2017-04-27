@@ -19,7 +19,7 @@ BannerView从我的初始项目AutoPlayViewpager改进而来
 
 ### 特性 
 加入了可见的圆点指示器，可定制其尺寸（三种），颜色（不限），播放时间间隔，相对位置（左，中，右）。
-改进：无限播放与滑动，初始化后加载图片数据即可实现轮播效果。
+改进：无限播放与滑动，初始化后加载图片数据即可实现轮播效果，再添加点击事件监听器即可。
 ### 原理说明
 
 这是一个自定义BannerView继承自RelativeLayout，子View为ViewPage和Indicator(继承自RelativeLayout)。通过自定义View：Indicator，
@@ -46,6 +46,8 @@ build.gradle(Module:app)
 
 ``` code
 loadUrl(ArrayList<String> urlList)//加载网络图片地址，只需要把地址集合添加进去就行了。
+//设置图片点击事件监听器，可以让Activity实现BannerView.OnItemClickListener 接口，然后 bannerView.setOnItemClickListener(this);
+setOnItemClickListener(BannerView.OnItemClickListener listener) 
 setAutoPlay(boolean play)//设置是否自动播放，默认播放
 setInterval(int interval)//设置播放间隔(ms)，例如3000ms
 setDotSize(int dotSize)//设置指示器圆点尺寸（三种）：AutoPlayViewpager.DOT_SMALL,AutoPlayViewpager.DOT_NORMAL,AutoPlayViewpager.DOT_LARGE
