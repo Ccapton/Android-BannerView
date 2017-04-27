@@ -24,6 +24,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,6 +67,7 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         obtainAttrs(attrs);
         View view=LayoutInflater.from(context).inflate(R.layout.viewpager,null);
          mViewPager= (ViewPager) view.findViewById(R.id.viewpager);
+
     }
 
     private void obtainAttrs(AttributeSet attrs){
@@ -142,16 +146,60 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         }
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(ImageView imageView,int position);
+    }
+    OnItemClickListener itemClickListener;
+    public void setOnItemClickListener(OnItemClickListener itemClickListener){
+        this.itemClickListener=itemClickListener;
+    }
+
+    private ArrayList<View> viewlist;
     public void loadUrl(ArrayList<String> urlList){
-        final ArrayList<View> viewlist=new ArrayList<>();
+        viewlist=new ArrayList<>();
         for (int i = 0; i <urlList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(urlList.get(i)).centerCrop().into(imageView);
+           final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(urlList.get(i)).centerCrop().listener(new RequestListener<String, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                 imageView.setOnClickListener(new OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         if(itemClickListener!=null)
+                             itemClickListener.onItemClick(imageView,position);
+                     }
+                 });
+                    return false;
+                }
+            }).into(imageView);
+
             viewlist.add(imageView);
         }
         for (int i = 0; i <urlList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(urlList.get(i)).centerCrop().into(imageView);
+             final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(urlList.get(i)).centerCrop().listener(new RequestListener<String, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         mViewPager.setTag(viewlist.size()/2);
@@ -185,17 +233,56 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         mIndicator.setDotSize(DisplayUtil.px2dip(context,dotSize));
         setIndicatorLocation(indicatorLocation);
         new AutoPlayThread(interval).start();
+
+
     }
+
     public void loadFile(ArrayList<File> fileList){
-        final ArrayList<View> viewlist=new ArrayList<>();
+      viewlist=new ArrayList<>();
         for (int i = 0; i <fileList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(fileList.get(i)).into(imageView);
+           final  ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(fileList.get(i)).centerCrop().listener(new RequestListener<File, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, File model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, File model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         for (int i = 0; i <fileList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(fileList.get(i)).into(imageView);
+             final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(fileList.get(i)).centerCrop().listener(new RequestListener<File, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, File model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, File model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         mViewPager.setTag(viewlist.size()/2);
@@ -231,15 +318,51 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         new AutoPlayThread(interval).start();
     }
     public void loadUri(ArrayList<Uri> uriList){
-        final ArrayList<View> viewlist=new ArrayList<>();
+        viewlist=new ArrayList<>();
         for (int i = 0; i <uriList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(uriList.get(i)).into(imageView);
+            final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(uriList.get(i)).centerCrop().listener(new RequestListener<Uri, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, Uri model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, Uri model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         for (int i = 0; i <uriList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(uriList.get(i)).into(imageView);
+            final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(uriList.get(i)).centerCrop().listener(new RequestListener<Uri, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, Uri model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, Uri model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         mViewPager.setTag(viewlist.size()/2);
@@ -275,15 +398,51 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         new AutoPlayThread(interval).start();
     }
     public void loadSourceId(ArrayList<Integer> idList){
-        final ArrayList<View> viewlist=new ArrayList<>();
+        viewlist=new ArrayList<>();
         for (int i = 0; i <idList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(idList.get(i)).into(imageView);
+            final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(idList.get(i)).centerCrop().listener(new RequestListener<Integer, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, Integer model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, Integer model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         for (int i = 0; i <idList.size(); i++) {
-            ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
-            Glide.with(context).load(idList.get(i)).into(imageView);
+            final ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
+            final int position=i;
+            Glide.with(context).load(idList.get(i)).centerCrop().listener(new RequestListener<Integer, GlideDrawable>() {
+                @Override
+                public boolean onException(Exception e, Integer model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, Integer model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    imageView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(itemClickListener!=null)
+                                itemClickListener.onItemClick(imageView,position);
+                        }
+                    });
+                    return false;
+                }
+            }).into(imageView);
             viewlist.add(imageView);
         }
         mViewPager.setTag(viewlist.size()/2);

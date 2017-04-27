@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.capton.bannerview.BannerView;
@@ -11,7 +12,7 @@ import com.capton.bannerview.Indicator;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BannerView.OnItemClickListener{
 
     BannerView bannerView;
     BannerView bannerView2;
@@ -41,9 +42,16 @@ public class MainActivity extends AppCompatActivity {
         bannerView2.setAutoPlay(false);
         bannerView2.setInterval(4000);
 
+
         bannerView3.loadUrl(stringArrayList);
         bannerView3.setAutoPlay(false);
-        bannerView3.setInterval(5000); 
+        bannerView3.setInterval(5000);
+        bannerView3.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    public void onItemClick(ImageView imageView,int position) {
+        Toast.makeText(this,position+"",Toast.LENGTH_SHORT).show();
     }
 }
