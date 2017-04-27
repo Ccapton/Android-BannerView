@@ -1,5 +1,6 @@
 # BannerView
 Extends from my another repository"AutoPlayViewpager"
+
 BannerView从我的初始项目AutoPlayViewpager改进而来
 
 > 关于我，欢迎关注  
@@ -18,7 +19,8 @@ BannerView从我的初始项目AutoPlayViewpager改进而来
 
 ### 特性 
 加入了可见的圆点指示器，可定制其尺寸（三种），颜色（不限），播放时间间隔，相对位置（左，中，右）。
-###原理说明
+改进：无限播放与滑动，初始化后加载图片数据即可实现轮播效果。
+### 原理说明
 
 这是一个自定义BannerView继承自RelativeLayout，子View为ViewPage和Indicator(继承自RelativeLayout)。通过自定义View：Indicator，
 动态添加其子View：Dot（自定义View,继承自ImageView），作为圆点指示器。通过子View ：ViewPager的OnPageChangeListener监听其滑动状态，
