@@ -142,7 +142,7 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         }
     }
 
-    public void loadUrl(final ArrayList<String> urlList){
+    public void loadUrl(ArrayList<String> urlList){
         final ArrayList<View> viewlist=new ArrayList<>();
         for (int i = 0; i <urlList.size(); i++) {
             ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
@@ -186,7 +186,7 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         setIndicatorLocation(indicatorLocation);
         new AutoPlayThread(interval).start();
     }
-    public void loadFile(Activity activity, ArrayList<File> fileList){
+    public void loadFile(ArrayList<File> fileList){
         final ArrayList<View> viewlist=new ArrayList<>();
         for (int i = 0; i <fileList.size(); i++) {
             ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
@@ -230,7 +230,7 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         setIndicatorLocation(indicatorLocation);
         new AutoPlayThread(interval).start();
     }
-    public void loadUri(Activity activity, ArrayList<Uri> uriList){
+    public void loadUri(ArrayList<Uri> uriList){
         final ArrayList<View> viewlist=new ArrayList<>();
         for (int i = 0; i <uriList.size(); i++) {
             ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);
@@ -274,7 +274,7 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
         setIndicatorLocation(indicatorLocation);
         new AutoPlayThread(interval).start();
     }
-    public void loadSourceId(Activity activity, ArrayList<Integer> idList){
+    public void loadSourceId(ArrayList<Integer> idList){
         final ArrayList<View> viewlist=new ArrayList<>();
         for (int i = 0; i <idList.size(); i++) {
             ImageView imageView= (ImageView) LayoutInflater.from(context).inflate(R.layout.image,null);

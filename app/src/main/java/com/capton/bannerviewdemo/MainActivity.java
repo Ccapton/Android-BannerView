@@ -1,5 +1,6 @@
 package com.capton.bannerviewdemo;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
          stringArrayList.add("http://img1.imgtn.bdimg.com/it/u=3055632223,2826867768&fm=214&gp=0.jpg");
         stringArrayList.add("http://img.article.pchome.net/00/28/41/62/pic_lib/wm/hlfjkpbz_17.jpg");
 
+
+
         bannerView= (BannerView) findViewById(R.id.banner);
         bannerView2= (BannerView) findViewById(R.id.banner2);
         bannerView3= (BannerView) findViewById(R.id.banner3);
@@ -36,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         bannerView2.loadUrl( stringArrayList);
         bannerView2.setAutoPlay(false);
-        bannerView2.setIndicatorLocation(BannerView.INDICATOR_LOCATION_CENTER);
         bannerView2.setInterval(4000);
 
-        bannerView3.loadUrl( stringArrayList);
+        bannerView3.loadUrl(stringArrayList);
         bannerView3.setAutoPlay(false);
-        bannerView3.setInterval(5000);
+        bannerView3.setInterval(5000); 
 
     }
 }
