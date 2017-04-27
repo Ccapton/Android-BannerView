@@ -38,7 +38,7 @@ allprojects {
 build.gradle(Module:app)
 ``` code
  dependencies {
-	        compile 'com.github.Ccapton:AutoPlayViewpager:1.1'
+	         compile 'com.github.Ccapton:BannerView:1.0'
 	}
 ```
 
