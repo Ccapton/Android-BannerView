@@ -13,7 +13,7 @@ BannerView从我的初始项目AutoPlayViewpager改进而来
 
 ### 示例:  
 
-![](https://shcm10.baidupcs.com/file/b25375269c2441e6f10464827e309331?bkt=p3-1400b25375269c2441e6f10464827e309331f5bd2ac000000038b377&fid=221609635-250528-515106658246435&time=1493285283&sign=FDTAXGERBHS-DCb740ccc5511e5e8fedcff06b081203-54hjrjZHJetjpVzFaxdURTIeMr8%3D&to=72&size=3715959&sta_dx=3715959&sta_cs=0&sta_ft=gif&sta_ct=0&sta_mt=0&fm2=MH,Yangquan,Netizen-anywhere,,beijing,cmnet&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=1400b25375269c2441e6f10464827e309331f5bd2ac000000038b377&expires=8h&rt=pr&r=818037932&mlogid=2707247725593770259&vuk=221609635&vbdid=2668435181&fin=S70427-17105775.gif&fn=S70427-17105775.gif&rtype=1&iv=2&dp-logid=2707247725593770259&dp-callid=0.1.1&hps=1&csl=0&csign=mLq5QedtLBdQLZS6b6U8OkFWBFw%3D&by=themis) 
+![](https://raw.githubusercontent.com/Ccapton/BannerView/master/S70427-17105775.gif) 
 
 
 
