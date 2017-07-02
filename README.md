@@ -38,7 +38,7 @@ allprojects {
 build.gradle(Module:app)
 ``` code
  dependencies {
-	         compile 'com.github.Ccapton:BannerView:1.0.1'
+	         compile 'com.github.Ccapton:Android-BannerView:1.0.1'
 	}
 ```
 
